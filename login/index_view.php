@@ -35,10 +35,12 @@
                 <div class="image">
                     <img src="../images/logo-placeholder.png" alt="mybookshelf logo">
                 </div>
-                <div class="alert alert-danger mb-3 text-center" role="alert">
-                    Erro no login. Revise suas credenciais.
+                <?php if (! empty($flashMessage)) : ?>
+                <div class="alert alert-<?= $flashMessage["type"]; ?> mb-3 text-center">
+                    <?= $flashMessage["message"]; ?>
                 </div>
-                <form method="post" action="test.php">
+                <?php endif ?>
+                <form method="post" action="login.php">
                     <div class="mb-3">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email" class="form-control">

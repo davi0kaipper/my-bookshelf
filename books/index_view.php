@@ -14,20 +14,12 @@
     <title>Títulos</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">My Bookshelf</a>
-            <div>
-            <a class="btn btn-outline-light disabled" href="#">User</a>
-            <a class="btn btn-outline-light" href="./index.php">Log Out</a>
-            </div>
-        </div>
-    </nav>
+    <?php require '../nav.php'; ?>
     <div class="container">
         <div class="row mt-3">
             <div class="col">
                 <div class="mb-3">
-                    <a href="./cadastrar.php" class="btn btn-primary">Cadastrar</a>
+                    <a href="./create.php" class="btn btn-primary">Cadastrar</a>
                     <a href="#" class="btn btn-secondary">Remover selecionados</a>
                 </div>
                 <div class="alert alert-success mb-3 text-center" role="alert">
@@ -58,9 +50,9 @@
                             <td>413</td>
                             <td>A história do velejar mais instigante já descrito.</td>
                             <td>
-                                <a href="./view.php">Ver</a>
+                                <a href="./show.php">Ver</a>
                                 <a href="./edit.php">Editar</a>
-                                <a href="./remove.php">Remover</a>
+                                <a href="#">Remover</a>
                             </td>
                         </tr>
                     </tbody>

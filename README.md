@@ -39,9 +39,3 @@ O **campos necessários** para o cadastro são:
 * criação dos estilos CSS utilizando BEM para componentização
 * criação dos componentes CSS em módulos separados
 * não utilizar diretamente o Bootstrap, porém, pode-se utilizar os conceitos
-
-### 3.3 Implementação do Back-End
-
-* ...
-
-## 4. Conclusão

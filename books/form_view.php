@@ -9,15 +9,7 @@
     </head>
     <body>
         <div class="mb-3">
-            <nav class="navbar navbar-dark bg-dark">
-                <div class="container-fluid mx-3">
-                    <a class="navbar-brand" href="./index.php">My Bookshelf</a>
-                    <div>
-                        <a class="btn btn-outline-light disabled" href="#">User</a>
-                        <a class="btn btn-outline-light" href="./index.php">Log Out</a>
-                    </div>
-                </div>
-            </nav>
+            <?php require '../nav.php'; ?>
         </div>
 
         <div class="col-6 container-fluid">
