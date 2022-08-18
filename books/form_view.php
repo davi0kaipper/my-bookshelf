@@ -13,10 +13,12 @@
         </div>
 
         <div class="col-6 container-fluid">
-            <div class="alert alert-danger mb-3 text-center">
-                Dados inválidos. Corrija as entradas.
-            </div>
-            <form action="store.php" method="post" enctype="multipart/form-data">
+            <?php if (! empty($flashMessage)) : ?>
+                <div class="alert alert-<?= $flashMessage["type"]; ?> mb-3 text-center">
+                    <?= $flashMessage["message"]; ?>
+                </div>
+            <?php endif ?>
+            <form action="../database.php?id=<?= $key["id"]; ?>" method="post" enctype="multipart/form-data">
 
                 <div class="row mb-3">
                     <label class="col-4 col-form-label" for="cover">Capa</label>
@@ -28,7 +30,7 @@
                 <div class="row mb-3">
                     <label class="col-4 col-form-label" for="title">Título</label>
                     <div class="col-8">
-                        <input type="text" name="title" id="title" value="<?= $data["title"] ?? ""; ?>" class="form-control">
+                        <input type="text" name="title" id="title" value="<?= $data["name"] ?? ""; ?>" class="form-control">
                     </div>
                 </div>
 
@@ -42,7 +44,7 @@
                 <div class="row mb-3">
                     <label class="col-4 col-form-label" for="pages">Número de páginas</label>
                     <div class="col-8">
-                        <input type="number" name="pages" id="pages" value="<?= $data["pages"] ?? ""; ?>" class="form-control">
+                        <input type="number" name="pages" id="pages" value="<?= $data["number_of_pages"] ?? ""; ?>" class="form-control">
                     </div>
                 </div>
 

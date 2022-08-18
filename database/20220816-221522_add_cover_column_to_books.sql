@@ -1,0 +1,9 @@
+-- up
+ALTER TABLE books ADD cover varchar(100);
+ALTER TABLE books ADD created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE books ADD updated_at DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+-- down
+ALTER TABLE books DROP COLUMN cover;
+ALTER TABLE books DROP COLUMN created_at;
+ALTER TABLE books DROP COLUMN updated_at;

@@ -4,6 +4,7 @@
 session_start();
 
 include '../flash_message.php';
+include '../clean_data.php';
 include '../database.php';
 
 // 2. obtém os dados do login

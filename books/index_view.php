@@ -22,13 +22,15 @@
                     <a href="./create.php" class="btn btn-primary">Cadastrar</a>
                     <a href="#" class="btn btn-secondary">Remover selecionados</a>
                 </div>
-                <div class="alert alert-success mb-3 text-center" role="alert">
-                    Título cadastrado com sucesso!
-                </div>
+                <?php if (! empty($flashMessage)) : ?>
+                    <div class="alert alert-<?= $flashMessage["type"]; ?> mb-3 text-center">
+                        <?= $flashMessage["message"]; ?>
+                    </div>
+                <?php endif ?>
                 <table class="table">
                     <thead>
                         <tr>
-                            <td><input type="checkbox" class="select_all_items"></td>
+                            <th><input type="checkbox" class="select_all_items"></th>
                             <th>Capa</th>
                             <th>Título</th>
                             <th>Autor(es)</th>
@@ -40,41 +42,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><input type="checkbox" class="item_id" option_id="1"></td>
-                            <td><img src="../images/example-cover.png"></td>
-                            <td>Rio de Memórias</td>
-                            <td>Wan Shi Tang</td>
-                            <td>Fantasia</td>
-                            <td>Valhalla</td>
-                            <td>413</td>
-                            <td>A história do velejar mais instigante já descrito.</td>
-                            <td>
-                                <a href="./show.php">Ver</a>
-                                <a href="./edit.php">Editar</a>
-                                <a href="#">Remover</a>
-                            </td>
-                        </tr>
+                        <?php if (count($books) !== 0) : ?>
+                            <?php foreach($books as $book): ?>
+                                <tr>
+                                    <td><input type="checkbox" class="item_id"></td>
+                                    <td><img src="./upload/<?= $book["cover"]; ?>"></td>
+                                    <td> <?= $book['name'] ?? ''; ?> </td>
+                                    <td> <?= $book['author'] ?? ''; ?> </td>
+                                    <td> <?= $book['genre'] ?? ''; ?> </td>
+                                    <td> <?= $book['publisher'] ?? ''; ?> </td>
+                                    <td> <?= $book['number_of_pages'] ?? ''; ?> </td>
+                                    <td> <?= $book['description'] ?? ''; ?> </td>
+                                    <td>
+                                        <a href="./show.php?id=<?= $book["id"]; ?>">Ver</a>
+                                        <a href="./edit.php?id=<?= $book["id"]; ?>">Editar</a>
+                                        <a href="./remove.php?id=<?= $book["id"]; ?>">Remover</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="9" class="text-center">Nenhum livro encontrado.</td>
+                            </tr>
+                        <?php endif ?>
                     </tbody>
                 </table>
+                <?php require './pagination.php'; ?>
             </div>
         </div>
-        <nav aria-label="...">
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link">Anterior</a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item" aria-current="page">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Próxima</a>
-            </li>
-        </ul>
-        </nav>
     </div>
 </body>
 </html>
-

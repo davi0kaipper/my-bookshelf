@@ -1,0 +1,10 @@
+-- up
+CREATE TABLE users (
+	id TINYINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50),
+	email VARCHAR(50),
+	password VARCHAR(32)
+);
+
+-- down
+DROP TABLE users;
