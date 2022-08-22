@@ -1,10 +1,10 @@
 <?php
 
-// 1. inicia a sessão
-session_start();
-
 require '../redirect.php';
 require '../database.php';
+
+// 1. inicia a sessão
+session_start();
 
 // 2. obtém os dados do usuário da sessão
 $user = $_SESSION['user'] ?? [];
@@ -25,5 +25,8 @@ if (empty($book)) {
     redirect('../books/index.php');
 }
 
-// 7. apresenta a view da apresentação do livro
+// 7. transforma os dados para apresentação
+$book['genre'] = implode(', ', $book['genre']);
+
+// 8. apresenta a view da apresentação do livro
 require 'show_view.php';

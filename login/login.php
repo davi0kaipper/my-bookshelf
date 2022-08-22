@@ -1,11 +1,11 @@
 <?php
 
-// 1. inicia a sessão
-session_start();
-
-include '../flash_message.php';
 include '../clean_data.php';
 include '../database.php';
+include '../flash_message.php';
+
+// 1. inicia a sessão
+session_start();
 
 // 2. obtém os dados do login
 $data = $_POST;

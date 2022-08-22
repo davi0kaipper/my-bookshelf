@@ -1,4 +1,4 @@
-<?php if (count($pagination['pages']) > 0) : ?>
+<?php if (! empty($pagination)): ?>
     <nav>
         <ul class="pagination">
 

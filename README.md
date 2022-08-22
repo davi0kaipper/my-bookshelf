@@ -39,3 +39,29 @@ O **campos necessários** para o cadastro são:
 * criação dos estilos CSS utilizando BEM para componentização
 * criação dos componentes CSS em módulos separados
 * não utilizar diretamente o Bootstrap, porém, pode-se utilizar os conceitos
+
+    passo a passo de afazeres
+
+- ok implementação do create
+  - disponibilizar um formulário vazio
+  - validar dados passados
+    - caso inválidos, manter os dados informados e apresentar mensagem de erro
+  - persistir os dados no banco
+  - retornar mensagem de sucesso na lista
+
+- ok implementação do edit
+  - disponibilizar formulário preenchido
+  - validar dados alterados passados
+    - caso inválidos, manter os dados informados e apresentar mensagem de erro
+  - atualizar os dados no banco
+  - retornar mensagem de sucesso na lista
+
+- ok arrumar a capa, o genero, o link da logo da tela de visualização
+
+- implementar a remoção em lote
+  - value na checkbox com o id
+- implementar a checkbox que seleciona todos
+- implementar a confirmação de remoção de selecionados
+
+se tiver data na session, usa o data
+caso não, usar o getbook

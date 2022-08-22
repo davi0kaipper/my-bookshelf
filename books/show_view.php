@@ -5,17 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://localhost:8000/public/styles/main.css">
         <title>My Bookshelf</title>
     </head>
     <body>
         <div class="mb-3">
-            <?php require '../nav.php'; ?>
+            <?php require '../partials/nav.php'; ?>
         </div>
         <div class="col-6 container-fluid">
             <div class="row mb-3">
                 <label class="col-4 col-form-label" for="photo">Capa</label>
                 <div class="col-8">
-                    <img src="./upload/<?= $book["cover"]; ?>">
+                    <img src="../upload/<?= $book["cover"]; ?>">
                 </div>
             </div>
 

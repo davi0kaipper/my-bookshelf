@@ -1,10 +1,10 @@
 <?php
 
-// 1. inicia a sessão
-session_start();
-
 require '../database.php';
 require '../flash_message.php';
+
+// 1. inicia a sessão
+session_start();
 
 // 2. obtém o id do livro a ser removido
 $id = $_GET['id'];

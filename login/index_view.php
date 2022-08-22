@@ -33,7 +33,7 @@
         <div class="container">
             <div class="login">
                 <div class="image">
-                    <img src="../images/logo-placeholder.png" alt="mybookshelf logo">
+                    <img src="../public/images/logo.png" alt="mybookshelf logo">
                 </div>
                 <?php if (! empty($flashMessage)) : ?>
                 <div class="alert alert-<?= $flashMessage["type"]; ?> mb-3 text-center">
